@@ -24,6 +24,7 @@ You have to move the brush by pressing the arrow keys and perform a few operatio
 *Load an image:* press *'I'* and type the filename (cancel by typing *'.'*).
 *Save an image:* press *'O'* and type the filename. (cancel by typing *'.'*).
 You also can update the recently saved file by pressing *'L'*.
+*'N'* key creates a new image.
 You can move the workspace by holding *Shift* and pressing the arrow keys.
 *'P'* toggles the bottom panel's visibility.
 Press *'Q'* to exit the *Funtime*.
@@ -37,4 +38,4 @@ Type *'make'* to compile *Funtime*. If you've got a linkage fault while make'ing
 License
 =======
 
-*Funtime* is a free software and available under the terms of GNU General Public License.
+*Funtime* is a free software and comes under the terms of GNU General Public License.
