@@ -32,7 +32,7 @@ Build Funtime
 =============
 
 You need the [Cursed Image library](https://github.com/MEDVEDx64/cursedimage) 0.5.0 or higher, and libncurses development files (not tested on ncurses < 5.7).
-Type *'make'* to compile *Funtime*.
+Type *'make'* to compile *Funtime*. If you've got a linkage fault while make'ing, try to build it by hand: `cc *.c -lcursedimage -lncurses -o funtime -s -O2`.
 
 License
 =======
