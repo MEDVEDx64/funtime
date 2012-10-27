@@ -3,5 +3,6 @@
 
 void constart(const char *mesg);
 char *conget();
+void confree();
 
 #endif // CONSOLE_H_INCLUDED

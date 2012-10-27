@@ -29,3 +29,9 @@ char *conget()
 {
     return constr;
 }
+
+void confree()
+{
+    if(constr != NULL)
+        free(constr);
+}

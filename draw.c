@@ -11,7 +11,7 @@ int ispanel = 1;
 
 void draw()
 {
-    /* Allocating screen space if it isn`t */
+    /* Allocating screen space if it isn`t allocated yet */
     if(screen == NULL) screen = cursed_blank(COLS,LINES);
     if(!pcols || !plines)
     {

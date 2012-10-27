@@ -9,21 +9,18 @@ int brushy = 0;
 int brush_getx() {return brushx;}
 int brush_gety() {return brushy;}
 
-#define D_STILL 15
-
 void brushmove(char to)
 {
     if(img == NULL) return;
-    if(to == DIR_UP && brushy) brushy--;
-    if(to == DIR_DOWN && brushy < getih()-1) brushy++;
-    if(to == DIR_LEFT && brushx) brushx--;
-    if(to == DIR_RIGHT && brushx < getiw()-1) brushx++;
+    if(to&DIR_UP && brushy) brushy--;
+    if(to&DIR_DOWN && brushy < getih()-1) brushy++;
+    if(to&DIR_LEFT && brushx) brushx--;
+    if(to&DIR_RIGHT && brushx < getiw()-1) brushx++;
 }
 
 void drawbrushlayer(void *where)
 {
     if(img == NULL) return;
-    //cursedimage *wh = where;
     unsigned int addr = cursed_get_addr(brushx, brushy, img->width);
     cursed_img_modify((cursedimage*)where, getoffsetx()+brush_getx(), getoffsety()+brush_gety(),
                       img->image[addr].sym, img->image[addr].colorpair|COL_KW);

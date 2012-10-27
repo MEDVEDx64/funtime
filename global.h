@@ -1,7 +1,7 @@
 #ifndef GLOBAL_H_INCLUDED
 #define GLOBAL_H_INCLUDED
 
-#define FUNTIME_VERSION "0.1002"
+#define FUNTIME_VERSION "0.1003"
 
 #define DIR_UP      1
 #define DIR_RIGHT   2

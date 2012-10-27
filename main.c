@@ -2,7 +2,7 @@
 
     Funtime
     Cursed Image pseudo-graphic editor
-    MEDVEDx64, 2012.10.26
+    MEDVEDx64, 2012.10.26-27
     GPL.
 
 **/
@@ -149,5 +149,6 @@ int main(int argc, char *argv[])
     cursed_quit();
     cursed_imgfree(buffer);
     cursed_imgfree(img);
+    confree();
     return 0;
 }

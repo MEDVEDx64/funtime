@@ -21,7 +21,7 @@ int loadi(const char *fn)
     }
 
     cursed_imgfree(img);
-    img = tmp; /// check this for memory leaks
+    img = tmp;
 
     if(cfname != NULL)
     {
@@ -52,7 +52,7 @@ int savei(const char *fn)
     {
         if(cursed_imgsave(cfname, img))
         {
-            pushmessage("Can`t write the file.", COL_WR);
+            pushmessage("No file name specified.", COL_WR);
             return 1;
         }
     }
@@ -94,13 +94,10 @@ void fnreset()
 
 void imgmove(char to)
 {
-    switch(to)
-    {
-        case DIR_UP: offsety--; break;
-        case DIR_DOWN: offsety++; break;
-        case DIR_LEFT: offsetx--; break;
-        case DIR_RIGHT: offsetx++; break;
-    }
+    if(to&DIR_UP) offsety--;
+    if(to&DIR_DOWN) offsety++;
+    if(to&DIR_LEFT) offsetx--;
+    if(to&DIR_RIGHT) offsetx++;
 }
 
 int getoffsetx() { return offsetx; }

@@ -20,8 +20,8 @@ void drawguilayer(void *where)
                 _where->width, PANEL_H, CURSED_DEFAULT_SYM, PANEL_COLOR);
     /* string to be drawn */
     char imgnfo[0x1000];
-    sprintf(imgnfo, "X:%d Y:%d W:%d H:%d", brush_getx(), brush_gety(),
-            getiw(), getih());
+    sprintf(imgnfo, "X:%d Y:%d W:%d H:%d @:%d @:%d", brush_getx(), brush_gety(),
+            getiw(), getih(), getoffsetx(), getoffsety());
     unsigned int len = strlen(imgnfo);
     /* Drawing the text */
     unsigned int i;
@@ -31,7 +31,7 @@ void drawguilayer(void *where)
                 _where->width-len-COORD_XOFFSET, _where->height-(PANEL_H-1), _where->width)+i;
         _where->image[addr].sym = imgnfo[i];
         /* ..with different colors! */
-        if(imgnfo[i] >= '0' && imgnfo[i] <= '9')
+        if((imgnfo[i] >= '0' && imgnfo[i] <= '9') || imgnfo[i] == '-')
             _where->image[addr].colorpair = COORD_DIGIT_COLOR;
         else if(imgnfo[i] == ' ')
             _where->image[addr].colorpair = PANEL_COLOR;
